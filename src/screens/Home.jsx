@@ -1,14 +1,91 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, TextInput, Text, View, Pressable } from 'react-native';
+import Calculation from './Calculation';
+import { useState } from 'react';
+import ExchangeRate from './ExchangeRate';
+import UnitConversion from './UnitConversion';
 
 const Home = () => {
+  const [view, setView] = useState(0);
+
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.container}>
+      <View style={styles.headingRow}>
+        <Pressable onPress={() => setView(0)}>
+          <Text
+            style={[
+              styles.title,
+              view === 0
+                ? {
+                    color: '#41b9d3ff',
+                    borderColor: '#41b9d3ff',
+                    borderBottomWidth: 1,
+                  }
+                : { color: 'white' },
+            ]}
+          >
+            Calculator
+          </Text>
+        </Pressable>
+        <Pressable onPress={() => setView(1)}>
+          <Text
+            style={[
+              styles.title,
+              view === 1
+                ? {
+                    color: '#41b9d3ff',
+                    borderColor: '#41b9d3ff',
+                    borderBottomWidth: 1,
+                  }
+                : { color: 'white' },
+            ]}
+          >
+            Exchange Rate
+          </Text>
+        </Pressable>
+        <Pressable onPress={() => setView(2)}>
+          <Text
+            style={[
+              styles.title,
+              view === 2
+                ? {
+                    color: '#41b9d3ff',
+                    borderColor: '#41b9d3ff',
+                    borderBottomWidth: 1,
+                  }
+                : { color: 'white' },
+            ]}
+          >
+            Unit Conversion
+          </Text>
+        </Pressable>
+      </View>
+
+      {view === 0 && <Calculation />}
+      {view === 1 && <ExchangeRate />}
+      {view === 2 && <UnitConversion />}
     </View>
   );
 };
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    backgroundColor: 'black',
+  },
+  headingRow: {
+    marginTop: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+  },
+  headingBtn: {
+    backgroundColor: 'red',
+  },
+  title: {
+    fontSize: 17,
+    marginHorizontal: 5,
+  },
+});
