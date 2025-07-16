@@ -1,0 +1,15 @@
+export const VolumeOptions = [
+  { id: '1', label: 'Hectoliter (hi)', value: 'hi' },
+  { id: '2', label: 'Cubic meter (m³)', value: 'm³' },
+  { id: '3', label: 'Cubic centimeter (cm³)', value: 'cm³' },
+  { id: '4', label: 'Deciliter (dl)', value: 'dl' },
+  { id: '5', label: 'Centiliter (cl)', value: 'cl' },
+  { id: '6', label: 'Cubic decimeter (dm³)', value: 'dm³' },
+  { id: '7', label: 'Liter (l)', value: 'l' },
+  { id: '8', label: 'Cubic millimeter (mm³)', value: 'mm³' },
+  { id: '9', label: 'Milliliter (ml)', value: '' },
+  { id: '10', label: 'Cubic foot (ft³)', value: 'ft³' },
+  { id: '11', label: 'Cubic yard (yd³)', value: 'yd³' },
+  { id: '12', label: 'Cubic inch (in³)', value: 'in³' },
+  { id: '13', label: 'Acre-foot (af³)', value: 'af³' },
+];

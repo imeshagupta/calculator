@@ -1,11 +1,26 @@
-import { StyleSheet, TextInput, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Calculation from './Calculation';
+import { useFocusEffect } from '@react-navigation/native';
 import { useState } from 'react';
 import ExchangeRate from './ExchangeRate';
 import UnitConversion from './UnitConversion';
 
-const Home = () => {
+const Home = ({ route, navigation }) => {
   const [view, setView] = useState(0);
+  const [fromCurrency, setFromCurrency] = useState('USD');
+  const [toCurrency, setToCurrency] = useState('INR');
+
+  useFocusEffect(() => {
+    if (route.params?.fromCurrency) {
+      setFromCurrency(route.params.fromCurrency);
+    }
+    if (route.params?.toCurrency) {
+      setToCurrency(route.params.toCurrency);
+    }
+    if (route.params?.view !== undefined) {
+      setView(route.params.view);
+    }
+  });
 
   return (
     <View style={styles.container}>
@@ -61,8 +76,14 @@ const Home = () => {
       </View>
 
       {view === 0 && <Calculation />}
-      {view === 1 && <ExchangeRate />}
-      {view === 2 && <UnitConversion />}
+      {view === 1 && (
+        <ExchangeRate
+          toCurrency={toCurrency}
+          fromCurrency={fromCurrency}
+          navigation={navigation}
+        />
+      )}
+      {view === 2 && <UnitConversion navigation={navigation} />}
     </View>
   );
 };

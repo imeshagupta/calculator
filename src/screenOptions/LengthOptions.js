@@ -1,0 +1,18 @@
+export const LengthOptions = [
+  { id: '1', label: 'Decimeter (dm)', value: 'dm' },
+  { id: '2', label: 'Light Year (ly)', value: 'ly' },
+  { id: '3', label: 'Millimeter (mm)', value: 'mm' },
+  { id: '4', label: 'Kilometer (km)', value: 'km' },
+  { id: '5', label: 'Centimeter (cm)', value: 'cm' },
+  { id: '6', label: 'Meter (m)', value: 'm' },
+  { id: '7', label: 'Micrometer (µm)', value: 'µm' },
+  { id: '8', label: 'Parsec (pc)', value: 'pc' },
+  { id: '9', label: 'Astronomical unit (AU)', value: 'AU' },
+  { id: '10', label: 'Lunar Distance (LD)', value: 'LD' },
+  { id: '11', label: 'Picometer (pm)', value: 'pm' },
+  { id: '12', label: 'Nanometer (nm)', value: 'nm' },
+  { id: '13', label: 'Yard (yd)', value: 'yd' },
+  { id: '14', label: 'Foot (ft)', value: 'ft' },
+  { id: '15', label: 'Mile (mi)', value: 'mi' },
+  { id: '16', label: 'Inch (in)', value: 'in' },
+];

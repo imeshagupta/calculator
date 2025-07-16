@@ -72,6 +72,7 @@ const Calculation = () => {
       setInput(input + value);
     }
   };
+
   return (
     <View style={styles.calculationContainer}>
       <View style={styles.inputRow}>
@@ -81,6 +82,8 @@ const Calculation = () => {
           value={input}
           onChangeText={setInput}
           style={styles.input}
+          editable={false}
+          keyboardType="numeric"
         />
       </View>
 
